@@ -1,16 +1,14 @@
-name: Docker demo
-on:
-  push:
-    branches: [ "main" ]
-  pull_request: 
-    branches: [ "main" ] 
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-            #v1 https://github.com/actions/hello-world-docker-action/releases/tag/v1
-      uses: actions/hello-world-docker-action@b136eb8894c5cb1dd5807da824be97ccdf9b5423
-      with:
-        who-to-greet: world
+name: Hello world action
+description: Action that passes 'world' as a parameter
+inputs:
+  who-to-greet:
+    description: Who to greet
+    required: true
+    default: World-cust-action
+outputs:
+  time: 'The time we greeted-cust'
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.who-to-greet }}
