@@ -1,0 +1,17 @@
+name: Docker demo
+on:
+  push:
+    branches: [ "main" ]
+    paths: './hello-world-docker-action/action.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+            #v3.0.2 https://github.com/actions/checkout/releases/tag/v3.0.2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+            #v1 https://github.com/actions/hello-world-docker-action/releases/tag/v1
+      - uses: actions/hello-world-docker-action@b136eb8894c5cb1dd5807da824be97ccdf9b5423
+        with:
+          who-to-greet: world
