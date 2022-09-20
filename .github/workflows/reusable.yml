@@ -18,4 +18,5 @@ jobs:
     steps:
       - id: generate-output-time
         run: echo "::set-output name=time-from-run::$(date)"
+      - run: echo "Hello ${{ inputs.who-to-greet }}"
 ...

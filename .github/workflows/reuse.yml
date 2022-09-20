@@ -1,12 +1,6 @@
 ---
 name: reuse-top
-on:
-  workflow_dispatch:
-    inputs:
-      who-to-greet:
-        type: string
-        required: true
-        default: World-reus
+on:  [workflow_dispatch]
 jobs:
   call-workflow:
   #note invalid value workflow reference: cannot specify version when calling local workflows
