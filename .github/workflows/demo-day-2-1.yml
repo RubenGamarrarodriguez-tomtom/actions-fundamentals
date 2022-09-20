@@ -21,7 +21,7 @@ jobs:
     steps: 
       run: |
         echo '👟Testing⋯'
-        echo sleep 1
+        sleep 1
     production:
       if: github.event.inputs.environment == 'Production'
       runs-on: ubuntu-latest
@@ -33,3 +33,4 @@ jobs:
           echo '3️⃣Deploying⋯'
           echo '4️⃣Deploying⋯'
           echo '5️⃣Deployed✔︎'
+          sleep 1
