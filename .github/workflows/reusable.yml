@@ -1,0 +1,16 @@
+name: reusable-workflow
+on:
+  workflow_call:
+    inputs:
+      who-to-greet:
+        type: string
+        required: true
+        default: World-reus
+jobs:
+  reusable-job:
+    runs-on: ubuntu-latest
+    outputs:
+      time: ${{ steps.generate-output-time.outputs.time-from-run }}
+    steps:
+      - id: generate-output-time
+        run: echo "::set-output name=time-from-run::$(date)"
