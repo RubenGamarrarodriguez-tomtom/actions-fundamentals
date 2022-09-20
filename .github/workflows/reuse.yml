@@ -12,7 +12,7 @@ jobs:
     uses: ./.github/workflows/reusable.yml@main
     with:
        who-to-greet: ${{ github.actor }}
-  use-output:
-    needs: call-workflow
-    steps: [run: echo "${{ needs.call-workflow.outputs.time }}"]
+  #use-output:
+    #needs: call-workflow
+    #steps: [run: echo "${{ needs.call-workflow.outputs.time }}"]
 ...
