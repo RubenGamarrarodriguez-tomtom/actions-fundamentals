@@ -1,0 +1,15 @@
+name: Day 2 1
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environment to where to deploy
+        type: environment
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '👷🏽Testing⋯'
+    
