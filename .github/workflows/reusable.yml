@@ -8,13 +8,12 @@ on:
         default: World-reus
     outputs:
       time-3t:
-        value: "${{ jobs.reusable-job.outputs.time-2 }}"
+        value: "${{ jobs.reusable-job.outputs.time-from-reusable-job }}"
 jobs:
   reusable-job:
     runs-on: ubuntu-latest
     outputs:
-      time: ${{ steps.generate-output-time.outputs.time-from-run }}
-      time-2: some time 2
+      time-from-reusable-job: ${{ steps.generate-output-time.outputs.time-from-run }}
     steps:
       - id: generate-output-time
         run: echo "::set-output name=time-from-run::$(date)"
