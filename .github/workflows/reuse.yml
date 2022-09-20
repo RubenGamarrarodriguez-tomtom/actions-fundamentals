@@ -9,7 +9,9 @@ on:
         default: World-reus
 jobs:
   call-workflow:
-    uses: ./.github/workflows/reusable.yml@main
+  #note invalid value workflow reference: cannot specify version when calling local workflows
+  #. https://github.com/RUBenGAMArrarodRiguEZ-ToMtOm/actions-fundamentals/actions/runs/3089637623
+    uses: ./.github/workflows/reusable.yml
     with:
        who-to-greet: ${{ github.actor }}
   #use-output:
