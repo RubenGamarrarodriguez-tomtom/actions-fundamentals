@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test, load-test]
     environment:
+      name: Production
       url: https://some.site.amazon.com
     steps: 
       - run: |
