@@ -8,7 +8,7 @@ on:
         default: World-reus
     outputs:
       time-3t:
-      value: "${{ jobs.reusable-job.outputs.time-2 }}"
+        value: "${{ jobs.reusable-job.outputs.time-2 }}"
 jobs:
   reusable-job:
     runs-on: ubuntu-latest
