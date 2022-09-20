@@ -1,0 +1,18 @@
+---
+name: reuse-top
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        type: string
+        required: true
+        default: World-reus
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/reusable.yml@main
+    with:
+       who-to-greet: ${{ github.actor }}
+  use-output:
+    needs: call-workflow
+    steps: [run: echo "${{ needs.call-workflow.outputs.time }}"]
+...
