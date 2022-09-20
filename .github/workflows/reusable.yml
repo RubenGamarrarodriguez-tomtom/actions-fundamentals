@@ -14,7 +14,7 @@ jobs:
   reusable-job:
     runs-on: ubuntu-latest
     outputs:
-      time-from-reusable-job: ${{ steps.generate-output-time.outputs.time-from-run }}
+      time-from-reusable-job: "${{ steps.generate-output-time.outputs.time-from-run }}"
     steps:
       - id: generate-output-time
         run: echo "::set-output name=time-from-run::$(date)"
